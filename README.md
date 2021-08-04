@@ -1,11 +1,10 @@
 # Metrics for Measuring Code-Switching
 
-Currently implemented methods are:
-- Code Mixing Index
-- Multilingual Index
-- Language Entropy
-- Burstiness
+Methods Included:
+- [x] Code Mixing Index
+- [x] Multilingual Index
+- [x] Language Entropy
+- [x] Burstiness
+- [ ] Span Entropy
+- [ ] SPAvg
 
-Possible methods to add:
-[ ] Span Enttropy
-[ ] SPAvg

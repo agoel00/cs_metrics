@@ -1,3 +1,9 @@
+'''
+Standardized metrics for code-switching
+[1]: https://www.isca-speech.org/archive/Interspeech_2017/pdfs/1429.PDF
+[2]: http://amitavadas.com/Pub/CMI.pdf
+'''
+
 from collections import Counter
 import math
 from statistics import stdev, mean

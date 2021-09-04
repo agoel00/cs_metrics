@@ -4,8 +4,10 @@ Methods Included:
 - [x] Code Mixing Index
 - [x] Multilingual Index
 - [x] Language Entropy
+- [ ] I-index : Prob of Switching
 - [x] Burstiness
 - [ ] Span Entropy
+- [ ] Memory
 - [ ] SPAvg
 
 ```

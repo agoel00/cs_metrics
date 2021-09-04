@@ -4,11 +4,11 @@ Methods Included:
 - [x] Code Mixing Index
 - [x] Multilingual Index
 - [x] Language Entropy
-- [ ] I-index : Prob of Switching
+- [x] I-index : Prob of Switching
 - [x] Burstiness
 - [ ] Span Entropy
 - [ ] Memory
-- [ ] SPAvg
+- [x] SPAvg : returns switching points. calculate avg over corpus
 
 ```
 >> from cs_metrics import *
@@ -22,3 +22,11 @@ Methods Included:
 >> burstiness(sample)
 >> -0.4835086004775133
 ```
+
+
+---
+To Dos:
+[ ] Take list or str as input.  Implemented for I-index
+[ ] case insensitive lang_tags, other_tags. Implemented for I-index
+[ ] take num of languages as an input argument
+[ ] take num of other tags as an input argument

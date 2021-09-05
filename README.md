@@ -26,7 +26,7 @@ Methods Included:
 
 ---
 To Dos:
-[ ] Take list or str as input.  Implemented for I-index
-[ ] case insensitive lang_tags, other_tags. Implemented for I-index
-[ ] take num of languages as an input argument
-[ ] take num of other tags as an input argument
+[ ] Take list or str as input.  Implemented for I-index<br>
+[ ] case insensitive lang_tags, other_tags. Implemented for I-index<br>
+[ ] take num of languages as an input argument<br>
+[ ] take num of other tags as an input argument<br>

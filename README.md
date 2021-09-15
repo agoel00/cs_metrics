@@ -23,6 +23,24 @@ Methods Included:
 >> -0.4835086004775133
 ```
 
+Sample code:
+
+```python
+
+import pandas as pd 
+from run import calc
+
+
+df = pd.read_csv('data_combined_get_splits_v1.csv')
+df = df.dropna(subset=['langtags'])
+df['langtags'] = df['langtags'].apply(eval)
+# we also need to filter the df to remove monolingual sents and sents with only 1 word
+
+print(calc(df.langtags.values[0], 'switch_surprisal))
+# see list of all supported functions in file run.py
+
+df['langtags'] = df['langtags'].apply(lambda x: calc(x, 'switch_surprisal'))
+```
 
 ---
 To Dos:
@@ -30,3 +48,5 @@ To Dos:
 [ ] case insensitive lang_tags, other_tags. Implemented for I-index<br>
 [ ] take num of languages as an input argument<br>
 [ ] take num of other tags as an input argument<br>
+
+---

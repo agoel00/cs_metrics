@@ -9,7 +9,7 @@ import math
 from statistics import stdev, mean
 
 LANG_TAGS = ['EN', 'HI']
-OTHER_TAGS = ['UNIV', 'NE']
+OTHER_TAGS = ['UNIV', 'NE','ACRO']
 
 def cmi(x):
     x = x.split()
@@ -27,7 +27,6 @@ def mindex(x, k=2):
     term = sum([(v/total)**2 for k,v in c.items() if k in LANG_TAGS])
     return (1-term)/((k-1)*term)
 
- 
 def lang_entropy(x, k=2):
     x = x.split()
     c = Counter(x)
@@ -36,7 +35,51 @@ def lang_entropy(x, k=2):
     result = sum([(i*math.log2(i)) for i in terms])
     return -result
 
- 
+def spavg(x, k= 2):
+
+    LANG_TAGS = [tag.lower() for tag in LANG_TAGS]
+    OTHER_TAGS = [tag.lower() for tag in OTHER_TAGS]
+
+    x = [el.lower() for el in x]
+
+    if isinstance(x,str):
+        x = x.split()
+
+    count = 0 
+    mem = None
+    for l_i, l_j in zip(x,x[1:]):
+        if l_i in OTHER_TAGS:
+            continue
+        if l_i != l_j:
+            count+=1
+
+    return count 
+
+
+def i_index(x,k=2):
+
+    LANG_TAGS = [tag.lower() for tag in LANG_TAGS]
+    OTHER_TAGS = [tag.lower() for tag in OTHER_TAGS]
+
+    x = [el.lower() for el in x]
+
+    if isinstance(x,str):
+        x = x.split()
+
+    count = 0 
+    mem = None
+    for l_i, l_j in zip(x,x[1:]):
+        if l_i in OTHER_TAGS:
+            continue
+        if l_i != l_j:
+            count+=1
+
+    return count/(len(x) - 1) 
+
+
+
+
+
 def burstiness(x):
     x = x.split()
     x = list(filter(lambda a: a not in OTHER_TAGS, x))

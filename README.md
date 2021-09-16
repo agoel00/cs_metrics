@@ -35,6 +35,8 @@ df = pd.read_csv('data_combined_get_splits_v1.csv')
 df = df.dropna(subset=['langtags'])
 df['langtags'] = df['langtags'].apply(eval)
 # we also need to filter the df to remove monolingual sents and sents with only 1 word
+df['langtags'] = df['langtags'].apply(lambda x: np.nan if not set(['hi', 'en']).issubset(x) else x)
+df = df.dropna(subset=['langtags'])
 
 print(calc(df.langtags.values[0], 'switch_surprisal))
 # see list of all supported functions in file run.py

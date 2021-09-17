@@ -38,7 +38,7 @@ df['langtags'] = df['langtags'].apply(eval)
 df['langtags'] = df['langtags'].apply(lambda x: np.nan if not set(['hi', 'en']).issubset(x) else x)
 df = df.dropna(subset=['langtags'])
 
-print(calc(df.langtags.values[0], 'switch_surprisal))
+print(calc(df.langtags.values[0], 'switch_surprisal'))
 # see list of all supported functions in file run.py
 
 df['langtags'] = df['langtags'].apply(lambda x: calc(x, 'switch_surprisal'))

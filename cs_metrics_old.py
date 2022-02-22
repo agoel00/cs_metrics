@@ -13,12 +13,8 @@ OTHER_TAGS = ['UNIV', 'NE','ACRO']
 
 def cmi(x):
     x = x.split()
-    x = [i for i in x if i in LANG_TAGS]
     c = Counter(x)
     max_wi = c.most_common()[0][1]
-    for k in list(c):
-        if k not in LANG_TAGS:
-            del c[k]
     n = len(x)
     u = sum([v for k,v in c.items() if k not in LANG_TAGS])
     if n==u: return 0
@@ -26,7 +22,6 @@ def cmi(x):
 
 def mindex(x, k=2):
     x = x.split()
-    x = [i for i in x if i in LANG_TAGS]
     c = Counter(x)
     total = sum([v for k,v in c.items() if k in LANG_TAGS])
     term = sum([(v/total)**2 for k,v in c.items() if k in LANG_TAGS])
@@ -34,7 +29,6 @@ def mindex(x, k=2):
 
 def lang_entropy(x, k=2):
     x = x.split()
-    x = [i for i in x if i in LANG_TAGS]
     c = Counter(x)
     total = sum([v for k,v in c.items() if k in LANG_TAGS])
     terms = [(v/total) for k,v in c.items() if k in LANG_TAGS]
@@ -50,9 +44,6 @@ def spavg(x, k= 2):
 
     if isinstance(x,str):
         x = x.split()
-
-    x = [i for i in x if i in LANG_TAGS]
-
 
     count = 0 
     mem = None
@@ -75,8 +66,6 @@ def i_index(x,k=2):
     if isinstance(x,str):
         x = x.split()
 
-    x = [i for i in x if i in LANG_TAGS]
-
     count = 0 
     mem = None
     for l_i, l_j in zip(x,x[1:]):
@@ -93,7 +82,6 @@ def i_index(x,k=2):
 
 def burstiness(x):
     x = x.split()
-    x = [i for i in x if i in LANG_TAGS]
     x = list(filter(lambda a: a not in OTHER_TAGS, x))
     spans = []
     cnt = 0
